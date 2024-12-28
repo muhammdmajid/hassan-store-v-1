@@ -3,7 +3,7 @@ import { FaFileContract, FaHome, FaListAlt, FaSearch, FaShoppingCart, FaUsers,  
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useCart from '../Hooks/useCart';
 import useAdmin from '../Hooks/useAdmin';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/logo.png';
 import { HiOutlineLightBulb } from 'react-icons/hi';
 import {  MdOutlineShoppingCart } from 'react-icons/md';
 import { CiStar } from 'react-icons/ci';
@@ -29,7 +29,7 @@ const Dashboard = () => {
                 
                     <img  loading="lazy"  className="h-10 w-10 rounded-full"
                         src={logo}
-                        alt="Magnetic plus" />
+                        alt="Hassan Store" />
                     <p className='ml-2 text-xl font-bold'>
                         <step className="text-green-500">Magnetic </step>
                         <step className="text-red-500">plus </step>
@@ -98,7 +98,7 @@ const Dashboard = () => {
                     <div className='flex justify-center items-center'>
                         <img  loading="lazy"  className="h-10 w-10 rounded-full"
                         src={logo}
-                        alt="Magnetic plus" />  
+                        alt="Hassan Store" />  
                          <p className='ml-2 text-xl font-bold'>
                         <step className="text-green-500">Magnetic </step>
                         <step className="text-red-500">plus </step>

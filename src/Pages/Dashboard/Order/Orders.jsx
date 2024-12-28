@@ -395,7 +395,7 @@ const Orders = () => {
                                         You Don&#39;t Have any Order
                                     </h2>
                                     <p className="text-xl text-indigo-100">
-                                        Continue to shopping with Magnetic Plus
+                                        Continue to shopping with Hassan Store
                                     </p>
                                 </div>
                                 <Link

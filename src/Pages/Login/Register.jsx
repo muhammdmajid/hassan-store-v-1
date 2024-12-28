@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import useAxiousPublic from '../../Hooks/useAxiousPublic';
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/logo.png'
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
 import './Register.css'
 import SocialLogin from './SocialLogin';

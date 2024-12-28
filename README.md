@@ -1,4 +1,4 @@
-# **Magnetic Plus E-Commerce App**
+# **Hassan E-Commerce App**
 
 ![Logo](/public/h1.png) 
 

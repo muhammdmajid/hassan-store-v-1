@@ -312,7 +312,7 @@ const handleDelete=(id)=>{
                                     You Don&#39;t Add any Product
                                 </h2>
                                 <p className="text-xl text-indigo-100">
-                                    Continue to shopping with Magnetic Plus
+                                    Continue to shopping with Hassan Store
                                 </p>
                             </div>
                             <Link

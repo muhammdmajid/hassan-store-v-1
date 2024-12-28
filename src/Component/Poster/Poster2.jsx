@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo.jpg';
+import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 
 const Poster2 = () => {
@@ -8,8 +8,8 @@ const Poster2 = () => {
       <div className="pt-16 pb-32 sm:pt-24 sm:pb-32 lg:pt-32 lg:pb-32 md:mx-10 mx-auto">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="sm:max-w-lg">
-            <h1 className="text-4xl font-bold tracking-tight md:text-6xl animate-pulse text-black">Magnetic Plus</h1>
-            <p className="mt-4 text-xl sm:text-2xl text-gray-600">Magnetic Plus Electric & Electronics was founded in 2019 to give consumers a winning combination of quality and affordability.</p>
+            <h1 className="text-4xl font-bold tracking-tight md:text-6xl animate-pulse text-black">Hassan Store</h1>
+            <p className="mt-4 text-xl sm:text-2xl text-gray-600">Hassan Store Electric & Electronics was founded in 2019 to give consumers a winning combination of quality and affordability.</p>
           </div>
           <div>
             <div className="mt-10">

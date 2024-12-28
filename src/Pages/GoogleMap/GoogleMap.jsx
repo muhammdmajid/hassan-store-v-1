@@ -15,7 +15,7 @@ const GoogleMap = () => {
                         <div className="rounded-lg overflow-hidden">
                             <div style={{ border: '1px solid black', width: '100%', height: '450px' }}>
                                 <iframe
-                                    title="Magnetic Plus Location"
+                                    title="Hassan Store Location"
                                     src={iframeSrc}
                                     width="100%"
                                     height="100%"
@@ -30,7 +30,7 @@ const GoogleMap = () => {
                             <div className="max-w-full mx-auto rounded-lg overflow-hidden">
                                 <div className="px-6 py-4">
                                     <h3 className="text-lg font-medium text-gray-900">Our Address</h3>
-                                    <p className="mt-1 text-gray-600">3/4, Magnetic Plus, Purana Paltan, Dhaka 1000</p>
+                                    <p className="mt-1 text-gray-600">3/4, Hassan Store, Purana Paltan, Dhaka 1000</p>
                                 </div>
                                 <div className="border-t border-gray-200 px-6 py-4">
                                     <h3 className="text-lg font-medium text-gray-900">Hours</h3>

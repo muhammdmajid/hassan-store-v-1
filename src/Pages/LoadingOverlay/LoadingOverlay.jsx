@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo.jpg';
+import logo from '../../assets/logo.png';
 
 const LoadingOverlay = ({ loading }) => {
     if (!loading) return null;
@@ -18,7 +18,7 @@ const LoadingOverlay = ({ loading }) => {
                 <span className="ml-3 text-white text-lg">
 
 
-                    <img  loading="lazy"  className='h-10 w-10 rounded-full' src={logo} alt="Magnetic plus" /></span>
+                    <img  loading="lazy"  className='h-10 w-10 rounded-full' src={logo} alt="Hassan Store" /></span>
                 <span className="ml-3 text-white text-lg">
                     <span className='text-green-500'>Magnetic</span>
                     <span  className='text-red-500'>Plus</span>

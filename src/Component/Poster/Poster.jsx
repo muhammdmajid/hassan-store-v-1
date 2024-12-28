@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../../assets/logo.jpg";
-import poster from "../../assets/_Yellow Professional Gradient Tech Internal Communication Website.png";
+import logo from "../../assets/logo.png";
 
 const Poster = () => {
     return (
@@ -51,7 +50,7 @@ const Poster = () => {
                         </div>
 
                         <div className="flex justify-center lg:justify-end">
-                            <img  loading="lazy"  className="w-full max-w-2xl animate-fadeIn" src={poster} alt="Promotional Poster" />
+                            
                         </div>
                     </div>
                 </div>

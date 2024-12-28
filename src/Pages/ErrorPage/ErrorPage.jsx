@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import  logo  from '../../assets/logo.jpg';
+import  logo  from '../../assets/logo.png';
 
 
 const ErrorPage = () => {
@@ -24,7 +24,7 @@ const ErrorPage = () => {
                                 You Are In Worng Page
                             </h2>
                             <p className="text-xl text-indigo-100">
-                                Continue to shopping with Magnetic Plus
+                                Continue to shopping with Hassan Store
                             </p>
                         </div>
                         <Link

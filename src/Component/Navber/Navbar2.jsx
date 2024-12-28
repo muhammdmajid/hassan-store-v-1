@@ -49,7 +49,7 @@ console.log(isAdmin);
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
                                         <Link to="/" className="flex items-center">
-                                            <img  loading="lazy"  className="h-14" src={logo} alt="Magnetic Plus" />
+                                            <img  loading="lazy"  className="h-14" src={logo} alt="Hassan Store" />
                                         </Link>
                                     </div>
                                     <div className="hidden md:block">

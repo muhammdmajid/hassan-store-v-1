@@ -171,7 +171,7 @@ const Cart = () => {
                                                 <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-3 md:gap-8">
                                                     <div className="">
                                                         <h2 className="font-medium text-xl leading-8 text-black mb-3">{item?.Name}</h2>
-                                                        <p className="font-normal text-lg leading-8 text-gray-500 ">By: Magnetic Plus</p>
+                                                        <p className="font-normal text-lg leading-8 text-gray-500 ">By: Hassan Store</p>
 
                                                     </div>
                                                     <div className="flex items-center justify-between gap-8">
@@ -203,7 +203,7 @@ const Cart = () => {
                                         You Don&#39;t Add any Product
                                     </h2>
                                     <p className="text-xl text-indigo-100">
-                                        Continue to shopping with Magnetic Plus
+                                        Continue to shopping with Hassan Store
                                     </p>
                                 </div>
                                 <Link

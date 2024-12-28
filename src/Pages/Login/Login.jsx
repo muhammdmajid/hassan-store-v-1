@@ -3,7 +3,7 @@ import { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import SocialLogin from './SocialLogin';
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/logo.png'
 
 import { FaEye, FaRegEyeSlash, FaGoogle, FaGithub, FaFacebook } from "react-icons/fa";
 import './Login.css'
