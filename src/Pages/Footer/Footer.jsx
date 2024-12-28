@@ -59,7 +59,7 @@ const Footer = () => {
             <div className="flex items-center">
               <img
                 loading="lazy"
-                className="w-auto h-16 rounded-full"
+                className="w-auto h-16 rounded-box"
                 src={footerData.companyInfo.logo}
                 alt="Hassan Store Logo"
               />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import useItems from "../../Hooks/useItems";
+import { Link } from "react-router-dom";
 import { debounce } from "lodash";
-import SearchResults from "./SearchResults"; // Import the new SearchResults component
 
 const SearchBar = () => {
   const [items] = useItems(); // Fetch items using your custom hook
@@ -11,7 +11,6 @@ const SearchBar = () => {
   const searchRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Debounced function to filter items based on search query
   const filterItems = debounce((query, items) => {
     if (query.trim() === "") {
       setSearchResults([]);
@@ -25,20 +24,17 @@ const SearchBar = () => {
     }
   }, 300);
 
-  // Handle query changes
   useEffect(() => {
     filterItems(query, items);
   }, [query, items]);
 
-  // Handle search form submission
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim() === "") return;
     setShowResults(false);
-    // You can add a redirection logic here if required.
+    // Redirect to the search results page or handle the search action
   };
 
-  // Close search results when clicking outside the search box
   const handleClickOutside = (event) => {
     if (searchRef.current && !searchRef.current.contains(event.target)) {
       setShowResults(false);
@@ -63,19 +59,22 @@ const SearchBar = () => {
   }, []);
 
   return (
-    <nav className="p-6 flex justify-center items-center relative bg-white">
+    <nav className="p-6 flex justify-center text-center items-center relative bg-white">
       <form
         onSubmit={handleSearch}
-        className="flex items-center relative w-full"
+        className="flex items-center relative w-full "
         ref={searchRef}
       >
-        <label htmlFor="default-search" className="sr-only">
+        <label
+          for="default-search"
+          class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+        >
           Search
         </label>
-        <div className="relative w-full">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <div class="relative w-full">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
             <svg
-              className="w-4 h-4 text-gray-500"
+              class="w-4 h-4 text-gray-500 dark:text-gray-400"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -83,9 +82,9 @@ const SearchBar = () => {
             >
               <path
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
               />
             </svg>
@@ -94,30 +93,48 @@ const SearchBar = () => {
             ref={inputRef}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search Product..."
+            placeholder="Search Product . . ."
             type="search"
             id="default-search"
-            className=" w-full p-4 ps-10 text-sm text-gray-900 border border-gray-600 focus:border hover:border hover:border-gray-600  focus:border-gray-50 rounded-lg"
+            class="block w-full p-4 ps-10 text-sm text-gray-900  border-gray-300 rounded-lg  border  dark:placeholder-gray-400 dark:text-white  "
             required
-            aria-describedby="search-results"
           />
           <button
             type="submit"
-            className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+            class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Search
           </button>
         </div>
         {showResults && (
-        <SearchResults
-          searchResults={searchResults}
-          setShowResults={setShowResults}
-        />
-      )}
+          <ul className="absolute top-full mt-2 w-full bg-white border rounded-md z-10">
+            {searchResults.length > 0 ? (
+              searchResults.slice(0, 4).map((item) => (
+                <li key={item._id} className="px-4 py-2 hover:bg-gray-100">
+                  <Link
+                    to={`/shop/category/${item._id}`}
+                    onClick={() => setShowResults(false)}
+                    className="block text-black"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <img loading="lazy" src={item?.img} alt={item.name} />
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-bold">{item.name}</div>
+                      </div>
+                    </div>
+                  </Link>
+                </li>
+              ))
+            ) : (
+              <li className="p-3 text-gray-500">No results found</li>
+            )}
+          </ul>
+        )}
       </form>
-
-      {/* Pass the searchResults and setShowResults props to the SearchResults component */}
- 
     </nav>
   );
 };

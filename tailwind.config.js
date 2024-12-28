@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        urdu: ['Noto Nastaliq Urdu', 'serif'],
+      },
+    },
+    
   },
   plugins: [require("daisyui")],
 }
