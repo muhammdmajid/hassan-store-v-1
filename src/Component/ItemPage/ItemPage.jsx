@@ -30,7 +30,7 @@ const ItemPage = () => {
 
 
     return (
-        <div className="pt-4">
+        <div className="">
             <SingleProductPage id={id} item={item}></SingleProductPage>
             <RelatedProducts finalItems={finalItems} ></RelatedProducts>
         </div>

@@ -16,7 +16,7 @@ const UserPopulatSection = () => {
         useQuery({
             queryKey: ['popularProducts'],
             queryFn: async () => {
-                const res = await axiousPublic.get("/popularProducts");
+                const res = await axiousPublic.get("/products");
                 return res.data;
 
             }

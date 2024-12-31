@@ -27,7 +27,7 @@ const Navbar2 = () => {
     const { data: allOrders = [] } = useQuery({
         queryKey: ['allOrders'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/allOrders');
+            const res = await axiosSecure.get('/orders/all');
             return res.data;
         }
     });

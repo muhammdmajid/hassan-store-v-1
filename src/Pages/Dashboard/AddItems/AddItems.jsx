@@ -64,7 +64,7 @@ const AddItems = () => {
                 const item = {
                     name, desc, price: parseFloat(price), categories, img: res.data.data.display_url
                 };
-                const itemRes = await axiosSecure.post('/items', item);
+                const itemRes = await axiosSecure.post('/products', item);
                 if (itemRes.data.insertedId) {
                     e.target.reset();
                     setImgPreview(null);

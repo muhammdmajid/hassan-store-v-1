@@ -1,11 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import useItems from "../../Hooks/useItems";
 import Product from "../Products/Product";
+import Breadcrumb from "../Breadcrumb";
 
 
 const Category = () => {
     const category = useParams();
-    const [items] = useItems()
+    const [items] = useItems();
+    console.log(items,'items')
     const myCategory = category.category
 
     const finalItems = []
@@ -34,6 +36,7 @@ const Category = () => {
             <Link to="/shop" className='btn-link no-underline underline-offset-4'> /shop </Link>
                 <Link to={`/shop/${myCategory}`} className='btn-link no-underline underline-offset-8'> /{myCategory}</Link>
             </span>
+        
             <section className="py-10 bg-white sm:py-16 lg:py-20">
                 <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                     <div className="max-w-md mx-auto text-center">

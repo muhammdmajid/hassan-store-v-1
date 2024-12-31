@@ -40,7 +40,7 @@ const Poster = () => {
 
               <p
                 dir="rtl"
-                class="font-urdu my-4 text-base lg:mt-8 sm:text-xl text-blue-600  text-right"
+                className="font-urdu my-4 text-base lg:mt-8 sm:text-xl text-blue-600  text-right"
               >
                 {posterData.subHeadline}
               </p>

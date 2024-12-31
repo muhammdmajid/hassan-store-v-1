@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+
 import useCart from "../../Hooks/useCart";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAdmin from "../../Hooks/useAdmin";
@@ -7,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo2.png";
+import UserMenu from "./UserMenu";
 const Navbar = () => {
   const { user, logOut, localItemLength } = useContext(AuthContext);
   const [addToCart] = useCart();
@@ -16,12 +18,15 @@ const Navbar = () => {
   const { data: allOrders = [] } = useQuery({
     queryKey: ["allOrders"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/allOrders");
-      return res.data;
+      if (isAdmin) {
+        const res = await axiosSecure.get("/orders/all");
+        return res.data ?? [];
+      } else return [];
     },
   });
 
-  console.log(isAdmin, user, "kkkkkkkkkk");
+  // console.log(isAdmin, user, "kkkkkkkkkk");
+  // console.log(allOrders, addToCart, "allOrders, addToCart");
   const commonLinks = [
     { path: "/", label: "Home" },
     { path: "/shop", label: "Shop" },
@@ -29,7 +34,6 @@ const Navbar = () => {
   ];
 
   const adminLinks = [
-    ...commonLinks,
     { path: "/dashboard/adminHome", label: "Admin Home" },
     { path: "/dashboard/manageOrders", label: "Manage Orders" },
     { path: "/dashboard/manageItems", label: "Manage Items" },
@@ -38,13 +42,16 @@ const Navbar = () => {
   ];
 
   const userLinks = [
-    ...commonLinks,
     { path: "/dashboard/cart", label: "Shopping Cart" },
     { path: "/dashboard/orders", label: "Orders" },
   ];
 
   // Links array based on the user role
-  const links = isAdmin ? adminLinks : user ? userLinks : commonLinks;
+  const links = isAdmin
+    ? [...commonLinks, ...adminLinks]
+    : user
+    ? [...commonLinks, ...userLinks]
+    : commonLinks;
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
 
@@ -79,8 +86,20 @@ const Navbar = () => {
         ))}
       </ul>
 
+      <UserMenu
+        user={user}
+        localItemLength={localItemLength}
+        allOrders={allOrders}
+        isAdmin={isAdmin}
+        addToCart={addToCart}
+        logOut={logOut}
+        adminLinks={adminLinks}
+      />
       {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className="block md:hidden ml-auto text-black">
+      <div
+        onClick={handleNav}
+        className="block md:hidden  text-black cursor-pointer"
+      >
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
 
@@ -111,7 +130,7 @@ const Navbar = () => {
         {/* Mobile Navigation Items */}
         {links.map((item) => (
           <li
-            key={item.lebel}
+            key={item.label}
             className="p-4 m-1 hover:bg-[#00df9a] duration-300 text-black font-bold cursor-pointer border-b-2 border-gray-600"
           >
             <Link to={item.path}>{item.label}</Link>

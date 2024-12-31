@@ -13,7 +13,7 @@ const UserTopSellingProducts = () => {
         useQuery({
             queryKey: ['topProducts'],
             queryFn: async () => {
-                const res = await axiousPublic.get("/topProducts");
+                const res = await axiousPublic.get("/products");
                 return res.data;
 
             }

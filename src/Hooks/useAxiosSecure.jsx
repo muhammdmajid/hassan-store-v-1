@@ -2,9 +2,10 @@ import axios from "axios";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import { VITE_SERVER } from "../util/constants";
  
 const axiosSecure = axios.create({
-    baseURL: 'https://magneticplus.sirony.xyz/'
+    baseURL: VITE_SERVER
 })
 const useAxiosSecure = () => {
     const navigate = useNavigate();
