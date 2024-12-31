@@ -7,7 +7,6 @@ import Breadcrumb from "../Breadcrumb";
 const Category = () => {
     const category = useParams();
     const [items] = useItems();
-    console.log(items,'items')
     const myCategory = category.category
 
     const finalItems = []
