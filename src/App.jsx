@@ -10,7 +10,7 @@ import Login from "./Pages/Login/Login.jsx";
 import PrivateRoute from "./route/PrivateRoute.jsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Dashboard from "./Layout/Dashboard.jsx";
-import Cart from "./Pages/Dashboard/Cart/Cart.jsx";
+import Cart from "./Pages/Dashboard/Cart/cart.jsx";
 import Allusers from "./Pages/Dashboard/AllUsers/Allusers.jsx";
 import AddItems from "./Pages/Dashboard/AddItems/AddItems.jsx";
 import AdminRoute from "./route/AdminRoute.jsx";

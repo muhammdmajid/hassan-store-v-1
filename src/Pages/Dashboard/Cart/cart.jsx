@@ -11,7 +11,7 @@ const Cart = () => {
   const axiosSecure = useAxiosSecure();
   const [addToCart, againFetch] = useCart();
   const navigate = useNavigate();
-console.log(addToCart,'addToCart')
+
   let date = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
 
   let totalPrice = addToCart.reduce((acc, item) => {
